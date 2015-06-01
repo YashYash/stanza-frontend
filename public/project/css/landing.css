@@ -1,4 +1,4 @@
-/* Container */
+/* Landing Container */
 .landing-container {
   background: url('http://www.wall321.com/thumbnails/detail/20120308/cityscapes%20city%20cars%20aston%20martin%20james%20bond%20bridges%20silver%20cars%20dbs%201920x1200%20wallpaper_www.wall321.com_15.jpg') no-repeat center center fixed;
   background-size: cover !important;
@@ -16,7 +16,7 @@
   transition: 0.5s ease;
 }
 
-/* Overlay */
+/* Landing Overlay */
 div.overlay {
   position: absolute;
   top: 0;
@@ -25,4 +25,9 @@ div.overlay {
   height: 100%;
   background: rgba(1, 1, 1, 0.7);
 }
-/*http://dff2h0hbfv6w4.cloudfront.net/images/stanza/logos/stanza_logo.png*/
+
+div.content-container {
+  position: relative;
+  width: 100%;
+}
+/*a little pixilated, but it has a height of 35px and a border-radius of 35px. The color of the border is #22c1ee*/

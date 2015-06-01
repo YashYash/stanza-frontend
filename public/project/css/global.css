@@ -1,6 +1,21 @@
 body, input, button, textarea, h1, h2, h3, p {
 	font-family: 'Open Sans', sans-serif !important;
 }
+
+.global-btn {
+  color: #22c1ee;
+  border: 2px solid #22c1ee;
+  border-radius: 35px;
+  height: 35px;
+  width: 200px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
 a {
   text-decoration: none;
   color: #75cfea;

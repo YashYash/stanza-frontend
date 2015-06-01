@@ -1,0 +1,70 @@
+doctype
+html(lang='en' ng-app="app")
+  head
+    meta(charset='utf-8')
+    meta(name="viewport" content="minimal-ui")
+    meta(name="viewport" content="width=device-width, initial-scale=1, minimal-ui")
+
+    //- Socket.io
+    script(src="/assignments/javascripts/vendor/socketio.js")
+
+    //- ionic
+    script(src="/assignments/javascripts/vendor/ionic/js/ionic.bundle.min.js")
+    link(href="/assignments/javascripts/vendor/ionic/css/ionic.css" rel="stylesheet")
+
+
+    //- firebase
+    script(src="https://cdn.firebase.com/js/client/2.2.1/firebase.js")
+
+    //- Simple login
+    script(src="https://cdn.firebase.com/js/simple-login/1.6.2/firebase-simple-login.js")
+
+    //-AngularFire
+    script(src="https://cdn.firebase.com/libs/angularfire/0.9.1/angularfire.min.js")
+
+    script(src="/assignments/javascripts/vendor/ngStorage.min.js")
+    script(src="/assignments/javascripts/vendor/jquery.min.js") 
+    script(src="/assignments/javascripts/vendor/moment.min.js")
+    script(src="/assignments/javascripts/vendor/jquery.min.js")   
+
+    //- App.js
+    script(src="/assignments/javascripts/app.js")
+    script(src="/assignments/javascripts/run.js")
+
+    //- Controllers
+    script(src="/assignments/javascripts/controllers/GlobalController.js")
+    script(src="/assignments/javascripts/controllers/RootController.js")
+    script(src="/assignments/javascripts/controllers/NavController.js")
+    script(src="/assignments/javascripts/controllers/ContentController.js")
+    script(src="/assignments/javascripts/controllers/LandingController.js")
+    script(src="/assignments/javascripts/controllers/AssignmentsController.js")
+    script(src="/assignments/javascripts/controllers/GetStartedController.js")
+
+
+    //- Directives
+    script(src="/assignments/javascripts/directives/ngLoad.js") 
+
+    //- Factories
+    script(src="/assignments/javascripts/factories/socketFactory.js")
+
+    //- Services
+    script(src="/assignments/javascripts/services/StateService.js")
+    //- Css
+    link(rel="stylesheet" href="/assignments/css/global.css")
+    link(rel="stylesheet" href="/assignments/css/nav.css")
+    link(rel="stylesheet" href="/assignments/css/content.css")
+    link(rel="stylesheet" href="/assignments/css/landing.css")
+    link(rel="stylesheet" href="/assignments/css/assignments.css")
+    link(rel="stylesheet" href="/assignments/css/get-started.css")
+    //- Fonts
+    link(href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/assignments/css')
+    link(href="//fontastic.s3.amazonaws.com/ajkCKZcprWV8fCCd7UykoN/icons.css" rel="stylesheet")      
+    link(href="//code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet")
+    link(href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/assignments/css')
+    link(href="//fontastic.s3.amazonaws.com/ajkCKZcprWV8fCCd7UykoN/icons.css" rel="stylesheet")
+    
+    //- Title
+    title {{tabTitle}}
+
+  //- Body
+  body(ui-view="global")    

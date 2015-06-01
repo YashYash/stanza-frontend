@@ -1,0 +1,36 @@
+<div class="assignments-container" ng-class="{'slide-left': (getData('NavController').slideContent)}">
+  <div class="get-started-banner">
+    <div class="overlay"></div>
+    <div class="content">
+      <h1>ASSIGNMENTS</h1>
+      <p class="sub-heading">Practice makes perfect</p>
+      <div class="sub-line"></div>
+      <p class="get-started-copy">First time here?</p>
+      <button class="global-blue-button-clear" ng-click="getStarted()">Get Started</button>
+      <p class="get-started-copy">OR</p>
+      <p style="margin-top:15px">Continue working your way through these assignments</p>
+      <span class="ion-ios-arrow-thin-down arrow-down"></span>
+    </div>
+  </div>
+  <div class="description">
+    <div class="tools-needed">
+      <p class="get-started-headings">Tools Needed</p>
+      <div class="sub-line"></div>
+      <p class="tools-paragraph">Before you start building, you will need your tools. 
+      </p>
+      <p class="tools-paragraph">
+      At Stanza we have 2 icon sets. 1) <a href="http://ionicons.com" target="_blank">http://ionicons.com</a> and 2) <a href="http://app.fontastic.me/#publish/font/ajkCKZcprWV8fCCd7UykoN" target="_blank">http://app.fontastic.me/#publish/font/ajkCKZcprWV8fCCd7UykoN</a>. The login for the fontastic account is as follows. Username: yash.saxena1217@gmail.com, password: kobefederer1qaz.
+      </p>
+      <p class="get-started-paragraph">
+        Invision is a really good tool that Front-end developers need to learn to use. It is a way for you and our designer (boss man Jonathan) to connect. All the assignments have a description and an invision link. All the elements, such as a background image url, can be found in invision. Invision allows you to comment on different parts of the image, so feel free to add comments to any of my uploads. Due to my time constraints, I can't make pixel perfect psds, so if some things are not dead in the center, assume that they should have been.
+      </p>
+    </div>
+    <div ng-repeat="assignment in getData('AssignmentsController').assignments">
+      <p class="get-started-headings">{{assignment.heading}}</p>
+      <div class="sub-line"></div>
+      <p class="get-started-paragraph">{{assignment.description}}
+        <a href="{{assignment.invisionUrl}}" target="_blank">Invision Link</a>
+      </p>
+    </div>
+  </div>
+</div>

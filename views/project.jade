@@ -1,0 +1,55 @@
+doctype
+html(lang='en' ng-app="app")
+  head
+    meta(charset='utf-8')
+    meta(name="viewport" content="minimal-ui")
+    meta(name="viewport" content="width=device-width, initial-scale=1, minimal-ui")
+
+    //- Socket.io
+    script(src="/project/javascripts/vendor/socketio.js")
+
+    //- ionic
+    script(src="/project/javascripts/vendor/ionic/js/ionic.bundle.min.js")
+    link(href="/project/javascripts/vendor/ionic/css/ionic.css" rel="stylesheet")
+
+    script(src="/project/javascripts/vendor/ngStorage.min.js")
+    script(src="/project/javascripts/vendor/jquery.min.js") 
+    script(src="/project/javascripts/vendor/moment.min.js")
+    script(src="/project/javascripts/vendor/jquery.min.js")   
+
+    //- App.js
+    script(src="/project/javascripts/app.js")
+
+    //- Controllers
+    script(src="/project/javascripts/controllers/GlobalController.js")
+    script(src="/project/javascripts/controllers/RootController.js")
+    script(src="/project/javascripts/controllers/NavController.js")
+    script(src="/project/javascripts/controllers/ContentController.js")
+    script(src="/project/javascripts/controllers/LandingController.js")
+
+
+    //- Directives
+    script(src="/project/javascripts/directives/ngLoad.js") 
+
+    //- Factories
+    script(src="/project/javascripts/factories/socketFactory.js")
+
+    //- Services
+
+    //- Css
+    link(rel="stylesheet" href="/project/css/global.css")
+    link(rel="stylesheet" href="/project/css/nav.css")
+    link(rel="stylesheet" href="/project/css/content.css")
+    link(rel="stylesheet" href="/project/css/landing.css")
+    //- Fonts
+    link(href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/project/css')
+    link(href="//fontastic.s3.amazonaws.com/ajkCKZcprWV8fCCd7UykoN/icons.css" rel="stylesheet")      
+    link(href="//code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet")
+    link(href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/project/css')
+    link(href="//fontastic.s3.amazonaws.com/ajkCKZcprWV8fCCd7UykoN/icons.css" rel="stylesheet")
+    
+    //- Title
+    title Stanza - Cars
+
+  //- Body
+  body(ui-view="global")    

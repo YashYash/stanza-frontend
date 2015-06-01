@@ -1,0 +1,25 @@
+{
+  "all": {
+    "redis": {
+      "port": 6379,
+      "host": "127.0.0.1"
+    }
+  },
+  "development": {
+  	"port": "3000",
+    "env": "development",
+    "db": "mongodb://pinpoint-founder:kobefederer1qaz@ds049170.mongolab.com:49170/pyar"
+  },
+  "staging": {
+  	"port": "3020",
+    "env": "staging",
+    "db": "mongodb://localhost:27017/pinpoint-staging",
+    "redis": {
+      "pass": ""
+    }
+  },
+  "production": {
+    "env": "production",
+    "db": "mongodb://pinpoint-founder:kobefederer1qaz@ds049170.mongolab.com:49170/pinpoint"
+  }
+}

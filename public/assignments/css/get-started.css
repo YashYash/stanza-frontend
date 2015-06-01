@@ -1,0 +1,54 @@
+.get-started-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: scroll;
+  width: 100%;
+  height: 100%;
+  background: #202328;
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+  transition: 0.5s ease;
+  box-shadow: 0 0 85px black;
+}
+
+.description {
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+  color: white;
+  padding: 80px 20px 100px 20px;
+}
+
+.description .get-started-headings {
+  font-size: 40px;
+  font-weight: 100;
+  margin-bottom: 25px;
+}
+
+.description .sub-line {
+  background: #22c1ee;
+  margin-right: 100%;
+  margin-bottom: 40px;
+  width: 30px;
+}
+
+.tools-paragraph {
+  line-height: 1.9em;
+  font-size: 15px;
+  letter-spacing: 0.08em;
+}
+
+.description .get-started-paragraph {
+  margin-bottom: 100px;
+  line-height: 1.9em;
+  font-size: 15px;
+  letter-spacing: 0.08em;
+}
+
+.description .get-started-paragraph a {
+  display: block;
+  padding-top: 10px;
+}

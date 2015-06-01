@@ -1,0 +1,91 @@
+.assignments-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: scroll;
+  width: 100%;
+  height: 100%;
+  background: #202328;
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+  transition: 0.5s ease;
+  box-shadow: 0 0 85px black;
+}
+
+.get-started-banner {
+  background: url('https://dff2h0hbfv6w4.cloudfront.net/images/stanza/landing/background-section-3.jpg');
+  position: relative;
+  width: 100%;
+  height: 500px;
+  background-size: cover !important;
+}
+
+.get-started-banner > .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(1, 1, 1, 0.1);
+  box-shadow: 0 0 20px black;
+}
+/* Content */
+
+.get-started-banner > .content {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  height: 300px;
+  padding: 0 20px;
+  max-width: 500px;
+  text-align: center;
+  color: white;
+}
+
+.get-started-banner > .content > h1 {
+  color: white;
+  font-size: 40px;
+  font-weight: 100;
+  text-align: center;
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+.get-started-banner > .content > p.sub-heading {
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.sub-line {
+  width: 50px;
+  height: 2px;
+  margin: auto;
+  background: rgba(238, 238, 238, 0.2);
+}
+
+.get-started-banner > .content > p.get-started-copy {
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.get-started-banner > .content > button {
+  width: 200px;
+  margin-top: 10px;
+}
+
+.get-started-banner > .content > .arrow-down {
+  font-size: 35px;
+  color: white;
+}
+
+@media(min-width:600px) {
+  .get-started-banner > .content > h1 {
+    font-size: 50px;
+  }
+}

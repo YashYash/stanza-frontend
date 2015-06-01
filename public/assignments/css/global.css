@@ -1,0 +1,165 @@
+body,
+input,
+button,
+textarea,
+h1,
+h2,
+h3,
+p {
+  font-family: 'Open Sans', sans-serif !important;
+}
+
+a {
+  text-decoration: none;
+  color: #75cfea;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+/*z-indexex*/
+
+.z-1 {
+  z-index: 1;
+}
+
+.z-2 {
+  z-index: 2;
+}
+
+.z-3 {
+  z-index: 3;
+}
+
+.z-4 {
+  z-index: 4;
+}
+
+.z-5 {
+  z-index: 5;
+}
+
+.z-6 {
+  z-index: 6;
+}
+
+.z-7 {
+  z-index: 7;
+}
+
+.z-8 {
+  z-index: 8;
+}
+
+.z-9 {
+  z-index: 9;
+}
+/*font-sizes*/
+
+h1 {
+  font-size: 30px;
+}
+
+p {
+  font-size: 14px;
+}
+
+button {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+}
+
+input {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+}
+
+button {
+  background: none;
+  border: none;
+  outline: 0;
+}
+
+.global-blue-button-clear {
+  border:2px solid #22c1ee;
+  color:white;
+  border-radius:35px;
+  height:35px;
+  -webkit-transition:0.4s;
+  -moz-transition:0.4s;
+  -ms-transition:0.4s;
+  -o-transition:0.4s;
+  transition:0.4s;
+}
+
+.global-blue-button-clear:hover {
+  background:rgba(34,193,238,0.2);
+}
+.placeholder::-webkit-input-placeholder {
+  color: #46454a;
+}
+
+.placeholder::-moz-placeholder {
+  color: #46454a;
+}
+
+.pointer {
+  cursor: pointer;
+}
+/*Mobile*/
+
+#global-ion-content {
+  background: #2f333f !important;
+}
+/*Global overlay*/
+
+#global-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(1, 1, 1, 0.8);
+  z-index: 99;
+  display: none;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.show-global-overlay {
+  display: block !important;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  transition: 0.5s;
+}
+
+/* Slide content left */
+.slide-left { 
+  -webkit-transform: translateX(-300px);
+  -moz-transform: translateX(-300px);
+  -ms-transform: translateX(-300px);
+  -o-transform: translateX(-300px);
+  transform: translateX(-300px);
+}
+
+/* Sub heading line */
+.sub-line {
+  width:50px;
+  height:2px;
+  margin:auto;
+  background:rgba(238,238,238,0.2);
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  select:focus,
+  textarea:focus,
+  input:focus {
+    font-size: 14px;
+  }
+}
+/*Desktop*/

@@ -1,5 +1,4 @@
 /* Landing Container */
-
 .landing-container {
   background: url('http://www.wall321.com/thumbnails/detail/20120308/cityscapes%20city%20cars%20aston%20martin%20james%20bond%20bridges%20silver%20cars%20dbs%201920x1200%20wallpaper_www.wall321.com_15.jpg') no-repeat center center fixed;
   background-size: cover !important;
@@ -16,8 +15,8 @@
   -o-transition: 0.5s ease;
   transition: 0.5s ease;
 }
-/* Landing Overlay */
 
+/* Landing Overlay */
 div.landing-overlay {
   position: absolute;
   top: 0;
@@ -26,15 +25,15 @@ div.landing-overlay {
   height: 100%;
   background: rgba(1, 1, 1, 0.7);
 }
-/* Landing Center Content Container */
 
+/* Landing Center Content Container */
 .landing-content {
   width: 400px;
   height: 200px;
   max-width: 100%;
 }
-/* Landing Title And SubTitle */
 
+/* Landing Title And SubTitle */
 .landing-title {
   position: relative;
   color: white;
@@ -52,10 +51,12 @@ div.landing-overlay {
   font-size: 18px;
 }
 
+/* Landing Specific Global Button Props */
 .landing-btn-margin {
   margin-bottom: 20px;
 }
 
+/* Tablet Media Queries */
 @media all and (max-width: 768px) {
   .landing-title {
     font-size: 54px;
@@ -69,6 +70,7 @@ div.landing-overlay {
   }
 }
 
+/* Mobile Media Queries */
 @media all and (max-width: 480px) {
   .landing-title {
     font-size: 48px;

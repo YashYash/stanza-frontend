@@ -22,14 +22,14 @@
       At Stanza we have 2 icon sets. 1) <a href="http://ionicons.com" target="_blank">http://ionicons.com</a> and 2) <a href="http://app.fontastic.me/#publish/font/ajkCKZcprWV8fCCd7UykoN" target="_blank">http://app.fontastic.me/#publish/font/ajkCKZcprWV8fCCd7UykoN</a>. The login for the fontastic account is as follows. Username: yash.saxena1217@gmail.com, password: kobefederer1qaz.
       </p>
       <p class="get-started-paragraph">
-        Invision is a really good tool that Front-end developers need to learn to use. It is a way for you and our designer (boss man Jonathan) to connect. All the assignments have a description and an invision link. All the elements, such as a background image url, can be found in invision. Invision allows you to comment on different parts of the image, so feel free to add comments to any of my uploads. Due to my time constraints, I can't make pixel perfect psds, so if some things are not dead in the center, assume that they should have been.
+        <a href="http://www.invisionapp.com/" target="_blank" class="inline">Invision</a> is a really good tool that Front-end developers need to learn to use. It is a way for you and our designer (boss man Jonathan) to connect. All the assignments have a description and an invision link. All the elements, such as a background image url, can be found in invision. Invision allows you to comment on different parts of the image, so feel free to add comments to any of my uploads. Due to my time constraints, I can't make pixel perfect psds, so if some things are not dead in the center, assume that they should have been.
       </p>
     </div>
     <div ng-repeat="assignment in getData('AssignmentsController').assignments">
       <p class="get-started-headings">{{assignment.heading}}</p>
       <div class="sub-line"></div>
       <p class="get-started-paragraph">{{assignment.description}}
-        <a href="{{assignment.invisionUrl}}" target="_blank">Invision Link</a>
+        <a href="{{assignment.invisionUrl}}" target="_blank" ng-show="assignment.invisionUrl">Invision Link</a>
       </p>
     </div>
   </div>

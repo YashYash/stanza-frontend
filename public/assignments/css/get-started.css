@@ -52,3 +52,8 @@
   display: block;
   padding-top: 10px;
 }
+
+.description .get-started-paragraph a.inline {
+  display: inline;
+  padding:0;
+}

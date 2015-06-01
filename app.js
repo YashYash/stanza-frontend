@@ -92,12 +92,12 @@ app.use(function(req, res, next) {
 
 if (!process.env.NODE_ENV) {
   globalEnv = 'development';
-  console.log('#### Scott getting sick @ front end ####');
+  console.log('#### Stanza getting sick @ front end ####');
   console.log('Server listening to port ' + 3000);
-  console.log('Using dev database - "scott"')
+  console.log('Using dev database - "stanza-frontend"')
   appserver.listen(process.env.PORT || 3000);
   // mongoose.connect('mongodb://pinpoint-founder:kobefederer1qaz@ds049170.mongolab.com:49170/pinpoint');
-  mongoose.connect('mongodb://localhost:27017/scott');
+  mongoose.connect('mongodb://localhost:27017/stanza-frontend');
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
@@ -109,13 +109,13 @@ if (!process.env.NODE_ENV) {
 
 if (process.env.NODE_ENV === 'production') {
   globalEnv = 'production';
-  console.log('#### Scott getting sick @ front end - in production ####');
-  console.log('Using production database - "scott"')
+  console.log('#### Stanza getting sick @ front end - in production ####');
+  console.log('Using production database - "stanza-frontend"')
   var port = process.env.PORT || 3000;
   appserver.listen(port);
   console.log('Server listening to port ' + port);
   // mongoose.connect('mongodb://pinpoint-founder:kobefederer1qaz@ds049170.mongolab.com:49170/pinpoint');
-  mongoose.connect('mongodb://localhost:27017/scott');
+  mongoose.connect('mongodb://localhost:27017/stanza-frontend');
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {

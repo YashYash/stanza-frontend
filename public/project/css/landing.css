@@ -22,10 +22,12 @@
 }
 
 /* Landing Center Content Container */
-.landing-content {
-  width: 400px;
+.landing-content-container {
   height: 200px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 400px;
+  min-width: 280px;
+  padding-top: 14px;
 }
 
 /* Landing Title */
@@ -35,8 +37,6 @@
   font-size: 48px;
   font-weight: 300;
   text-align: center;
-  margin-top: 14px;
-  white-space: nowrap;
 }
 /* Landing Subtitle */
 .landing-subtitle {

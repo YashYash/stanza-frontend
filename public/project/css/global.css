@@ -45,6 +45,14 @@ p {
   margin: auto;
 }
 
+.top-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
 .global-btn {
   color: #ffffff;
   border: 2px solid #22c1ee;
@@ -52,7 +60,6 @@ p {
   height: 35px;
   width: 200px;
 }
-
 
 a {
   text-decoration: none;

@@ -38,10 +38,11 @@ div.landing-overlay {
 .landing-title {
   position: relative;
   color: white;
-  font-size: 60px;
+  font-size: 48px;
   font-weight: 300;
   text-align: center;
   margin-top: 14px;
+  white-space:nowrap;
 }
 
 .landing-subtitle {
@@ -55,32 +56,4 @@ div.landing-overlay {
 /* Landing Specific Global Button Props */
 .landing-btn-margin {
   margin-bottom: 20px;
-}
-
-/* Tablet Media Queries */
-@media all and (max-width: 768px) {
-  .landing-title {
-    font-size: 54px;
-  }
-  .landing-subtitle {
-    font-size: 17px;
-    padding-top: 25px;
-  }
-  .landing-btn-margin {
-    margin-bottom: 30px;
-  }
-}
-
-/* Mobile Media Queries */
-@media all and (max-width: 480px) {
-  .landing-title {
-    font-size: 48px;
-  }
-  .landing-subtitle {
-    font-size: 16px;
-    padding-top: 20px;
-  }
-  .landing-btn-margin {
-    margin-bottom: 35px;
-  }
 }

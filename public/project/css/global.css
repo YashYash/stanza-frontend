@@ -9,6 +9,25 @@ p {
   font-family: 'Open Sans', sans-serif !important;
 }
 
+.fade-in {
+  opacity: 0;
+  -webkit-animation: fadeIn ease-in 1;
+  -moz-animation: fadeIn ease-in 1;
+  -o-animation: fadeIn ease-in 1;
+  animation: fadeIn ease-in 1;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.fade-in-1s {
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+}
+
 .dead-center {
   position: absolute;
   left: 0;
@@ -33,6 +52,7 @@ p {
   height: 35px;
   width: 200px;
 }
+
 
 a {
   text-decoration: none;

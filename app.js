@@ -97,7 +97,7 @@ if (!process.env.NODE_ENV) {
   console.log('Using dev database - "scott"')
   appserver.listen(process.env.PORT || 3000);
   // mongoose.connect('mongodb://pinpoint-founder:kobefederer1qaz@ds049170.mongolab.com:49170/pinpoint');
-  // mongoose.connect('mongodb://localhost:27017');
+  mongoose.connect('mongodb://localhost:27017/scott');
   // mongoose.connect('mongodb://localhost/scott');
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);

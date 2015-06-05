@@ -84,6 +84,13 @@
   color: white;
 }
 
+.inline-icons {
+  position: relative;
+  font-size: 20px;
+  top:2px;
+  margin-right:10px;
+}
+
 @media(min-width:600px) {
   .get-started-banner > .content > h1 {
     font-size: 50px;

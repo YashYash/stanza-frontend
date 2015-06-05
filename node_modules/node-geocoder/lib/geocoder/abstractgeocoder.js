@@ -7,12 +7,12 @@ var net        = require('net'),
  * @param <object> options     Options
  */
 var AbstractGeocoder = function(httpAdapter, options) {
-    if (!this.name || this.name == 'undefinded') {
-        throw new Error('this.name must be defined in Constructor');
+    if (!this.constructor.name || this.constructor.name == 'undefinded') {
+        throw new Error('The Constructor must be named');
     }
 
     if (!httpAdapter || httpAdapter == 'undefinded') {
-        throw new Error(this.name + ' need an httpAdapter');
+        throw new Error(this.constructor.name + ' need an httpAdapter');
     }
     this.httpAdapter = httpAdapter;
 
@@ -33,16 +33,15 @@ var AbstractGeocoder = function(httpAdapter, options) {
 
 /**
 * Reverse geocoding
-* @param <integer>  lat      Latittude
-* @param <integer>  lng      Longitude
+* @param {lat:<number>,lon:<number>}  lat: Latitude, lon: Longitude
 * @param <function> callback Callback method
 */
-AbstractGeocoder.prototype.reverse = function(lat, lng, callback) {
+AbstractGeocoder.prototype.reverse = function(query, callback) {
     if (typeof this._reverse != 'function') {
-        throw new Error(this.name + ' no support reverse geocoding');
+        throw new Error(this.constructor.name + ' no support reverse geocoding');
     }
-    
-    return this._reverse(lat, lng, callback);   
+
+    return this._reverse(query, callback);
 };
 
 /**
@@ -52,21 +51,21 @@ AbstractGeocoder.prototype.reverse = function(lat, lng, callback) {
 */
 AbstractGeocoder.prototype.geocode = function(value, callback) {
     if (typeof this._geocode != 'function') {
-        throw new ValueError(this.name + ' does not support geocoding');
+        throw new ValueError(this.constructor.name + ' does not support geocoding');
     }
     if (net.isIPv4(value) && (!this.supportIPv4 || this.supportIPv4 == 'undefined')) {
-        throw new ValueError(this.name + ' does not support geocoding IPv4');
+        throw new ValueError(this.constructor.name + ' does not support geocoding IPv4');
     }
 
     if (net.isIPv6(value) && (!this.supportIPv6 || this.supportIPv6 == 'undefined')) {
-        throw new ValueError(this.name + ' does not support geocoding IPv6');
+        throw new ValueError(this.constructor.name + ' does not support geocoding IPv6');
     }
 
     if (this.supportAddress === false && (!net.isIPv4(value) && !net.isIPv6(value))) {
-        throw new ValueError(this.name + ' does not support geocoding address');
+        throw new ValueError(this.constructor.name + ' does not support geocoding address');
     }
 
-    return this._geocode(value, callback);  
+    return this._geocode(value, callback);
 };
 
 module.exports = AbstractGeocoder;

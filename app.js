@@ -57,15 +57,12 @@ app.use(session({
   }
 }));
 app.use(passport.initialize());
-app.use(passport.session());
+app.use(passport. session());
 app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(function(req, res, next) {
-  // Production
-  // res.setHeader('Access-Control-Allow-Origin', 'https://pinpoint-ionic.herokuapp.com');
-  // Development
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5000');
+  res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
   res.setHeader('Access-Control-Allow-Credentials', true);
@@ -92,12 +89,11 @@ app.use(function(req, res, next) {
 
 if (!process.env.NODE_ENV) {
   globalEnv = 'development';
-  console.log('#### Scott getting sick @ front end ####');
+  console.log('#### Stanza getting sick @ front end ####');
   console.log('Server listening to port ' + 3000);
-  console.log('Using dev database - "scott"')
+  console.log('Using dev database - "stanza-frontend"')
   appserver.listen(process.env.PORT || 3000);
-  // mongoose.connect('mongodb://pinpoint-founder:kobefederer1qaz@ds049170.mongolab.com:49170/pinpoint');
-  // mongoose.connect('mongodb://localhost:27017/scott');
+  mongoose.connect('mongodb://localhost:27017/stanza-frontend');
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
@@ -109,13 +105,12 @@ if (!process.env.NODE_ENV) {
 
 if (process.env.NODE_ENV === 'production') {
   globalEnv = 'production';
-  console.log('#### Scott getting sick @ front end - in production ####');
-  console.log('Using production database - "scott"')
+  console.log('#### Stanza getting sick @ front end - in production ####');
+  console.log('Using production database - "stanza-frontend"')
   var port = process.env.PORT || 3000;
   appserver.listen(port);
   console.log('Server listening to port ' + port);
-  // mongoose.connect('mongodb://pinpoint-founder:kobefederer1qaz@ds049170.mongolab.com:49170/pinpoint');
-  mongoose.connect('mongodb://localhost/scott');
+  mongoose.connect('mongodb://pinpoint-founder:kobefederer1qaz@ds049170.mongolab.com:49170/pinpoint');
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {

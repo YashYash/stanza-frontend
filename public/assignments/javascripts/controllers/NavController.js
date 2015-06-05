@@ -27,6 +27,10 @@ app.controller('NavController', [
     	} else {
     		StateService.data['NavController'].slideContent = true;
     	}
-    }
+    };
+
+    $scope.goTo = function(state) {
+      $state.go(state);
+    };
   }
 ]);

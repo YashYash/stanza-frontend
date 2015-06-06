@@ -17,9 +17,8 @@ app.service('WallService', [
     	createPost: function(post) {
             console.log('#### Creating the post');
             var newPost = post;
-            newPost.created = moment().utc().format('MM-DD-YYYY hh:mm A');
+            newPost.created = moment().format('MM-DD-YYYY hh:mm A');
             posts.$push(newPost).then(function(response) {
-                console.log("#### Added the post");
                 $rootScope.$broadcast('post created');
             });
 

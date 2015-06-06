@@ -28,6 +28,7 @@
   box-shadow: 0 0 100px black;
   text-align: center;
   padding-top:20px;
+  z-index: 1;
   -webkit-transform: scale(0,0);
   -moz-transform: scale(0,0);
   -ms-transform: scale(0,0);
@@ -112,4 +113,14 @@
 }
 .form-container button {
   width: 200px;
+}
+.post {
+  position: relative;
+}
+.post-date {
+  position: absolute;
+  right: 0;
+  font-size: 12px;
+  top: 0;
+  opacity: 0.5;  
 }

@@ -25,7 +25,8 @@
     </form>
   </div>
   <div class="description">
-    <div ng-repeat="post in getData('WallController').posts | filter:searchPosts">
+    <div ng-repeat="post in getData('WallController').posts | filter:searchPosts" class="post">
+    	<span class="post-date">{{post.created}}</span>
       <p class="get-started-headings">{{post.title}}</p>
       <div class="sub-line"></div>
       <p class="get-started-paragraph">

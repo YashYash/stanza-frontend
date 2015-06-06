@@ -1,19 +1,3 @@
-.assignments-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  overflow: scroll;
-  width: 100%;
-  height: 100%;
-  background: #202328;
-  -webkit-transition: 0.5s ease;
-  -moz-transition: 0.5s ease;
-  -ms-transition: 0.5s ease;
-  -o-transition: 0.5s ease;
-  transition: 0.5s ease;
-  box-shadow: 0 0 85px black;
-}
-
 .get-started-banner {
   background: url('https://dff2h0hbfv6w4.cloudfront.net/images/stanza/landing/background-section-3.jpg');
   position: relative;
@@ -84,15 +68,13 @@
   color: white;
 }
 
-.inline-icons {
-  position: relative;
-  font-size: 20px;
-  top:2px;
-  margin-right:10px;
-}
-
-@media(min-width:600px) {
-  .get-started-banner > .content > h1 {
-    font-size: 50px;
-  }
+.get-started-banner > .content > input {
+  background:rgba(238,238,238,0.1);
+  border:none;
+  box-shadow: 0 0 10px black;
+  margin-top:30px;
+  color:white;
+  text-align: center;
+  width:300px;
+  margin: 30px auto 0 auto;
 }

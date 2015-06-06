@@ -70,3 +70,6 @@
   position: relative;
   top: 4px;
 }
+.side-bar ul li.icon-eye:before {
+  top:6px;
+}

@@ -1,0 +1,38 @@
+<div class="wall-container" ng-class="{'slide-left': (getData('NavController').slideContent)}">
+  <div class="get-started-banner">
+    <div class="overlay"></div>
+    <div class="content">
+      <h1>STANZA WALL</h1>
+      <p class="sub-heading">Share your knowlege</p>
+      <div class="sub-line"></div>
+      <p class="get-started-copy">Found a cool article or video? Post it here!</p>
+      <button class="global-blue-button-clear" ng-click="toggleForm()">Post it</button>
+      <p class="get-started-copy">OR</p>
+      <p style="margin-top:15px">Search through everything on the wall</p>
+      <input type="text" placeholder="What are you looking for?" ng-model="searchPosts">
+    </div>
+  </div>
+  <div class="form-container" ng-class="{'show-form-container': (showForm)}">
+    <span class="icon-cross-1 close-form" ng-click="toggleForm()"></span>
+    <h1>SHARE</h1>
+    <div class="sub-line"></div>
+    <form ng-submit="createPost()">
+      <input type="text" placeholder="Title" ng-model='post.title'>
+      <input type="text" placeholder="Short Description" ng-model='post.description'>
+      <input type="text" placeholder="Article Url" ng-model='post.articleUrl'>
+      <input type="text" placeholder="Video Url" ng-model='post.videoUrl'>
+      <button class="global-blue-button-clear" type="submit">{{buttonText}}</button>
+    </form>
+  </div>
+  <div class="description">
+    <div ng-repeat="post in getData('WallController').posts | filter:searchPosts">
+      <p class="get-started-headings">{{post.title}}</p>
+      <div class="sub-line"></div>
+      <p class="get-started-paragraph">
+        {{post.description}}
+        <a href="{{post.articleUrl}}" target="_blank" ng-show="post.articleUrl"><span class="ion-document-text inline-icons"></span>Article</a>
+        <a href="{{post.videoUrl}}" target="_blank" ng-show="post.videoUrl"><span class="ion-ios-film-outline inline-icons"></span>Video</a>
+      </p>
+    </div>
+  </div>
+</div>

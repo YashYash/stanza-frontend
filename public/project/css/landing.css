@@ -1,0 +1,61 @@
+/* Landing Container */
+.landing-container {
+  background: url('http://www.wall321.com/thumbnails/detail/20120308/cityscapes%20city%20cars%20aston%20martin%20james%20bond%20bridges%20silver%20cars%20dbs%201920x1200%20wallpaper_www.wall321.com_15.jpg') no-repeat center center fixed;
+  background-size: cover !important;
+  background-position: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 85px black;
+}
+
+/* Landing Overlay */
+.landing-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(1, 1, 1, 0.7);
+}
+
+/* Landing Center Content Container */
+.landing-content-container {
+  height: 200px;
+  width: 100%;
+  max-width: 400px;
+  min-width: 280px;
+  padding-top: 14px;
+}
+
+/* Landing Title */
+.landing-title {
+  position: relative;
+  color: white;
+  font-size: 48px;
+  font-weight: 300;
+  text-align: center;
+}
+/* Landing Subtitle */
+.landing-subtitle {
+  position: relative;
+  text-align: center;
+  padding-top: 30px;
+  color: #22c1ee;
+  font-size: 18px;
+}
+
+/* Landing Line */
+.landing-line {
+  background-color: rgba(255, 255, 255, .4);
+  width: 100px;
+  height: 1px;
+  top: 33px;
+}
+
+/* Landing Specific Props on Global Class */
+.landing-btn-margin {
+  margin-bottom: 20px;
+}

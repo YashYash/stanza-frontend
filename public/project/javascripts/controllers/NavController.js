@@ -13,6 +13,8 @@ app.controller('NavController', [
 
     console.log('#### Nav Controller');
 
+    $rootScope.$on('landingBody:toggleSidebar', toggleSidebar);
+
     $scope.navigate = function(route) {
       if (route === 'home') {
         $state.go('app.v1.landing');
@@ -35,5 +37,8 @@ app.controller('NavController', [
       return StateService.data[container][key];
     };
 
+    function toggleSidebar(event, obj) {
+      StateService.data[obj.container][obj.key] = !(StateService.data[obj.container][obj.key])
+    }
   }
 ]);

@@ -18,6 +18,5 @@ app.controller('LandingController', [
     $scope.getState = function(container, key) {
       return StateService.data[container][key];
     };
-
   }
 ]);

@@ -1,4 +1,5 @@
 /* Sidebar Container */
+
 .sidebar-container {
   position: fixed;
   right: -300px;
@@ -8,24 +9,24 @@
   color: white;
   box-shadow: inset 7px 0px 80px -7px rgba(0, 0, 0, 0.9);
 }
-
 /* Sidebar Menu Container */
+
 .sidebar-menu-container {
   position: relative;
   right: 10px;
   top: 84px;
   bottom: 0;
-  padding-left: 10px;
+  padding-left: 17px;
   margin: auto;
   text-align: left;
   font-size: 20px;
 }
-
 /* Sidebar List Element Rows */
+
 li#home-row.icon-home-2 {
   position: absolute;
   padding-top: 19px;
-  padding-left: 10px;
+  padding-left: 22px;
   cursor: pointer;
 }
 
@@ -33,31 +34,30 @@ li#cars-row.ion-model-s {
   position: absolute;
   top: 60px;
   padding-top: 19px;
-  padding-left: 10px;
+  padding-left: 22px;
   cursor: pointer;
 }
-
 /* Sidebar List Element Icons */
+
 li.icon-home-2,
 li.ion-model-s {
   font-size: 20px;
   height: 60px;
   width: 100%;
 }
-
 /* Sidebar List Element Copy */
+
 span.sidebar-menu-copy {
   font-family: 'Open Sans', sans-serif !important;
-  font-size: 18px;
+  font-size: 15px;
   position: absolute;
-  left: 35px;
+  left: 60px;
   top: 18px;
   font-weight: 400;
   cursor: pointer;
 }
-
 /* Sidebar Add Ons */
+
 .sidebar-hover {
   background: #223a43;
 }
-

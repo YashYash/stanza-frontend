@@ -1,8 +1,8 @@
 app.controller('GlobalController', [
   '$scope',
-  '$state',
   '$rootScope',
-  function($scope, $state, $rootScope) {
+  '$state',
+  function($scope, $rootScope, $state) {
     'use strict';
     console.log('#### Global Controller');
     $state.go('app.v1.landing');

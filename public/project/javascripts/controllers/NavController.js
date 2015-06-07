@@ -4,8 +4,8 @@ app.controller('NavController', [
   '$state',
   'StateService',
   function(
-    $rootScope,
     $scope,
+    $rootScope,
     $state,
     StateService) {
     'use strict';

@@ -1,5 +1,5 @@
 <div ng-toggle class="nav-container nav-gradient">
-  <div ng-class='{ "toggle-left": (getState("sidebar", "isToggled")) }' class='sidebar-container'></div>
-  <img ng-class='{ "toggle-left": (getState("sidebar", "isToggled")) }' src="http://dff2h0hbfv6w4.cloudfront.net/images/stanza/logos/stanza_logo.png">
+  <div class="sidebar-container transition-point5s" ng-class='{ "slide-left": (getState("sidebar", "isToggled")) }'></div>
+  <img class="transition-point5s" ng-class='{ "slide-left": (getState("sidebar", "isToggled")) }' src="http://dff2h0hbfv6w4.cloudfront.net/images/stanza/logos/stanza_logo.png">
   <div id='ion-burger' class="ion-navicon top-right"></div>
 </div ng-toggle>

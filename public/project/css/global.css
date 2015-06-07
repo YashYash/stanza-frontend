@@ -9,8 +9,8 @@ p {
   font-family: 'Open Sans', sans-serif !important;
 }
 
-/* Animation Type Transform Slide Left */
-.toggle-left {
+/* Animation Types */
+.slide-left {
   -webkit-transform: translateX(-300px);
   -moz-transform: translateX(-300px);
   -ms-transform: translateX(-300px);
@@ -18,7 +18,6 @@ p {
   transform: translateX(-300px);
 }
 
-/* Animation Type FadeIn */
 .fade-in {
   opacity: 0;
   -webkit-animation: fadeIn ease-in 1;
@@ -30,8 +29,8 @@ p {
   -o-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
-/* Animation Duration */
 
+/* Animation Durations */
 .duration-1s {
   -webkit-animation-duration: 1s;
   -moz-animation-duration: 1s;
@@ -39,6 +38,15 @@ p {
   animation-duration: 1s;
 }
 
+/* Animation Transitions */
+.transition-point5s {
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+}
+
+/* Positioning */
 .dead-center {
   position: absolute;
   left: 0;
@@ -59,6 +67,14 @@ p {
 .top-right {
   position: absolute;
   right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.top-left {
+  position: absolute;
+  left: 0;
   top: 0;
   bottom: 0;
   margin: auto;

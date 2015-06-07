@@ -6,9 +6,5 @@
   z-index: 0;
   background: rgba(32, 35, 40, 1);
   color: white;
-  -webkit-transition: .5s ease-in-out;
-  -moz-transition: .5s ease-in-out;
-  -o-transition: .5s ease-in-out;
-  transition: .5s ease-in-out;
 }
 

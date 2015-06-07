@@ -4,7 +4,7 @@ app.directive('ngToggle', function(StateService) {
       element.bind('click', function(event) {
 
         var isHamburger = (event.target.id === 'ion-burger');
-        var isNavigateHome = (event.target.id === 'home-opt');
+        var isNavigateHome = (event.target.id === 'home-opt')
         var isNavigateCars = (event.target.id === 'cars-opt');
 
         if (isHamburger || isNavigateHome || isNavigateCars) {

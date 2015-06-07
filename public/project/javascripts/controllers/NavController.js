@@ -35,8 +35,5 @@ app.controller('NavController', [
       return StateService.data[container][key];
     };
 
-    $scope.toggleSidebar = function() {
-      StateService.data['sidebar'].isToggled = !(StateService.data['sidebar'].isToggled);
-    };
   }
 ]);

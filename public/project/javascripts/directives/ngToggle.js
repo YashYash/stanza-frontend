@@ -1,4 +1,4 @@
-app.directive('ngToggle', function(StateService) {
+app.directive('ngToggle', function($timeout, StateService) {
   return {
     link: function(scope, element, attrs) {
       element.bind('click', function(event) {
@@ -10,9 +10,15 @@ app.directive('ngToggle', function(StateService) {
         if (isHamburger || isNavigateHome || isNavigateCars) {
           StateService.data['sidebar'].isToggled = !(StateService.data['sidebar'].isToggled);
           scope.$apply();
+
+          /* Handle case for hovering outside of the sidebar before its been fully opened (.5sec CSS3 transition) */
+          $timeout(function() {
+            StateService.data['sidebar'].isFullyOpen = !(StateService.data['sidebar'].isFullyOpen);
+            scope.$apply();
+          }, 500);
         }
       });
     }
   }
-  ngToggle.$inject('StateService');
+  ngToggle.$inject('$timeout, StateService');
 });

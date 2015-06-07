@@ -6,7 +6,8 @@ app.factory('StateService', function() {
 
   var stateData = {
     'sidebar': {
-      isToggled: false
+      isToggled: false,
+      isFullyOpen: false
     }
   };
   return {

@@ -39,6 +39,12 @@ app.controller('NavController', [
 
     function toggleSidebar(event, obj) {
       StateService.data[obj.container][obj.key] = !(StateService.data[obj.container][obj.key])
+      obj.key = 'isFullyOpen';
+      onToggleSideBar(obj);
+    }
+
+    function onToggleSideBar(obj) {
+      StateService.data[obj.container][obj.key] = !(StateService.data[obj.container][obj.key])
     }
   }
 ]);

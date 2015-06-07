@@ -15,7 +15,7 @@ app.directive('ngHover', function($rootScope, StateService) {
           scope.$apply();
 
           /* only broadcast if the sidebar is toggled */
-        } else if (StateService.data['sidebar'].isToggled) {
+        } else if (StateService.data['sidebar'].isToggled && StateService.data['sidebar'].isFullyOpen) {
           obj.container = 'sidebar';
           obj.key = 'isToggled';
           $rootScope.$broadcast('landingBody:toggleSidebar', obj);

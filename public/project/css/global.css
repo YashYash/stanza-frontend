@@ -8,8 +8,17 @@ h3,
 p {
   font-family: 'Open Sans', sans-serif !important;
 }
-/* Animation Type FadeIn */
 
+/* Animation Type Transform Slide Left */
+.toggle-left {
+  -webkit-transform: translateX(-300px);
+  -moz-transform: translateX(-300px);
+  -ms-transform: translateX(-300px);
+  -o-transform: translateX(-300px);
+  transform: translateX(-300px);
+}
+
+/* Animation Type FadeIn */
 .fade-in {
   opacity: 0;
   -webkit-animation: fadeIn ease-in 1;
@@ -21,8 +30,8 @@ p {
   -o-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
-
 /* Animation Duration */
+
 .duration-1s {
   -webkit-animation-duration: 1s;
   -moz-animation-duration: 1s;
@@ -132,7 +141,6 @@ input {
   -webkit-appearance: none;
   -webkit-border-radius: 0;
 }
-
 /*Transitions*/
 
 .linear-3 {

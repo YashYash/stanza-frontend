@@ -8,5 +8,4 @@ app.controller('RootController', [
 		$state) {
 	'use strict';
 	console.log('#### Root Controller');
-
 }]);

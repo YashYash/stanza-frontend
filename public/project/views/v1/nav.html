@@ -1,4 +1,5 @@
-<div class="nav-container nav-gradient">
-  <img src="http://dff2h0hbfv6w4.cloudfront.net/images/stanza/logos/stanza_logo.png">
-  <div class="ion-navicon top-right"></div>
-</div>
+<div ng-toggle class="nav-container nav-gradient">
+  <div ng-class='{ "toggle-left": (getState("sidebar", "isToggled")) }' class='sidebar-container'></div>
+  <img ng-class='{ "toggle-left": (getState("sidebar", "isToggled")) }' src="http://dff2h0hbfv6w4.cloudfront.net/images/stanza/logos/stanza_logo.png">
+  <div id='ion-burger' class="ion-navicon top-right"></div>
+</div ng-toggle>

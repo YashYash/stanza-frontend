@@ -86,20 +86,21 @@ button {
 }
 
 .global-blue-button-clear {
-  border:2px solid #22c1ee;
-  color:white;
-  border-radius:35px;
-  height:35px;
-  -webkit-transition:0.4s;
-  -moz-transition:0.4s;
-  -ms-transition:0.4s;
-  -o-transition:0.4s;
-  transition:0.4s;
+  border: 2px solid #22c1ee;
+  color: white;
+  border-radius: 35px;
+  height: 35px;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .global-blue-button-clear:hover {
-  background:rgba(34,193,238,0.2);
+  background: rgba(34, 193, 238, 0.2);
 }
+
 .placeholder::-webkit-input-placeholder {
   color: #46454a;
 }
@@ -138,23 +139,24 @@ button {
   -moz-transition: 0.5s;
   transition: 0.5s;
 }
-
 /* Slide content left */
-.slide-left { 
+
+.slide-left {
   -webkit-transform: translateX(-300px);
   -moz-transform: translateX(-300px);
   -ms-transform: translateX(-300px);
   -o-transform: translateX(-300px);
   transform: translateX(-300px);
 }
-
 /* Sub heading line */
+
 .sub-line {
-  width:50px;
-  height:2px;
-  margin:auto;
-  background:rgba(238,238,238,0.2);
+  width: 50px;
+  height: 2px;
+  margin: auto;
+  background: rgba(238, 238, 238, 0.2);
 }
+
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   select:focus,
   textarea:focus,

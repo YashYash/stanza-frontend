@@ -35,7 +35,7 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider, $urlR
 	    'content@app.v1': {
 	      templateUrl: '/project/views/v1/content.html',
 	      controller: 'ContentController'
-	    }     
+	    }
 	  }
     })
     .state('app.v1.landing', {
@@ -46,7 +46,7 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider, $urlR
           controller: 'LandingController'
         }
       }
-    })                
+    })
 }]);
 
 app.constant('moment', moment);

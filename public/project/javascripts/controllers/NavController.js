@@ -13,10 +13,7 @@ app.controller('NavController', [
 
     console.log('#### Nav Controller');
 
-    var ctrl = this;
-
     $scope.navigate = function(route) {
-      ctrl.toggleSidebar();
       if (route === 'home') {
         $state.go('app.v1.landing');
       }
@@ -38,7 +35,7 @@ app.controller('NavController', [
       return StateService.data[container][key];
     };
 
-    ctrl.toggleSidebar = function() {
+    $scope.toggleSidebar = function() {
       StateService.data['sidebar'].isToggled = !(StateService.data['sidebar'].isToggled);
     };
   }

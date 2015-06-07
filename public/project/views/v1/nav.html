@@ -2,8 +2,8 @@
 <div ng-toggle class="nav-container z-3">
   <div class="sidebar-container transition-point5s" ng-class='{ "slide-left": (getState("sidebar", "isToggled")) }'>
     <ul class="sidebar-menu-container">
-      <li ng-click='navigate("home");' class="icon-home-2"><span class="sidebar-menu-copy">Home</span></li>
-      <li ng-click='navigate("cars");' class="ion-model-s"><span class="sidebar-menu-copy">Cars</span></li>
+      <li ng-click='navigate("home"); toggleSidebar();' class="icon-home-2"><span class="sidebar-menu-copy">Home</span></li>
+      <li ng-click='navigate("cars"); toggleSidebar();' class="ion-model-s"><span class="sidebar-menu-copy">Cars</span></li>
     </ul>
   </div>
   <img class="transition-point5s" ng-class='{ "slide-left": (getState("sidebar", "isToggled")) }' src="http://dff2h0hbfv6w4.cloudfront.net/images/stanza/logos/stanza_logo.png">

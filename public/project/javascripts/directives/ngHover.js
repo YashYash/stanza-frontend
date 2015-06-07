@@ -7,9 +7,9 @@ app.directive('ngHover', function($rootScope, StateService) {
 
         var isHomeRow = (event.target.id === 'home-row') || (event.target.id === 'home-row-copy');
         var isCarsRow = (event.target.id === 'cars-row') || (event.target.id === 'cars-row-copy');
-        var isLanding = (event.target.parentNode.id === 'landing-body') || (event.target.parentNode.id === 'desktop-nav');
+        var isOutsideSidebar = (event.target.parentNode.id === 'landing-view') || (event.target.parentNode.id === 'nav-view');
 
-        if (!isLanding) {
+        if (!isOutsideSidebar) {
           scope.hoverHome = isHomeRow;
           scope.hoverCars = isCarsRow;
           scope.$apply();

@@ -10,6 +10,7 @@ p {
 }
 
 /* Animation Types */
+
 .slide-left {
   -webkit-transform: translateX(-300px);
   -moz-transform: translateX(-300px);
@@ -29,24 +30,24 @@ p {
   -o-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
-
 /* Animation Durations */
+
 .duration-1s {
   -webkit-animation-duration: 1s;
   -moz-animation-duration: 1s;
   -o-animation-duration: 1s;
   animation-duration: 1s;
 }
-
 /* Animation Transitions */
+
 .transition-point5s {
   -webkit-transition: .5s ease-in-out;
   -moz-transition: .5s ease-in-out;
   -o-transition: .5s ease-in-out;
   transition: .5s ease-in-out;
 }
-
 /* Positioning */
+
 .dead-center {
   position: absolute;
   left: 0;

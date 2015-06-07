@@ -1,12 +1,11 @@
 /* Nav Container */
 
 .nav-container {
+  position: fixed;
   height: 70px;
   width: 100%;
-  position: fixed;
   top: 0;
   left: 0;
-  z-index: 2;
 }
 /* Nav Logo Top Left */
 
@@ -34,6 +33,9 @@
 /* Nav Gradient */
 
 .nav-gradient {
+  position: fixed;
+  width: 100%;
+  height: 92px;
   background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.88) 0%, rgba(5, 5, 5, 0.88) 51%, rgba(10, 10, 10, 0) 99%, rgba(10, 10, 10, 0) 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.88)), color-stop(51%, rgba(5, 5, 5, 0.88)), color-stop(99%, rgba(10, 10, 10, 0)), color-stop(100%, rgba(10, 10, 10, 0)));
   background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.88) 0%, rgba(5, 5, 5, 0.88) 51%, rgba(10, 10, 10, 0) 99%, rgba(10, 10, 10, 0) 100%);

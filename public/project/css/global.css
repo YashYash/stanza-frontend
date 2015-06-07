@@ -10,7 +10,6 @@ p {
 }
 
 /* Animation Types */
-
 .slide-left {
   -webkit-transform: translateX(-300px);
   -moz-transform: translateX(-300px);
@@ -30,15 +29,14 @@ p {
   -o-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
-/* Animation Durations */
 
+/* Animation Transitions */
 .duration-1s {
   -webkit-animation-duration: 1s;
   -moz-animation-duration: 1s;
   -o-animation-duration: 1s;
   animation-duration: 1s;
 }
-/* Animation Transitions */
 
 .transition-point5s {
   -webkit-transition: .5s ease-in-out;
@@ -46,8 +44,28 @@ p {
   -o-transition: .5s ease-in-out;
   transition: .5s ease-in-out;
 }
-/* Positioning */
 
+.linear-3 {
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+}
+
+.linear-5 {
+  transition: 0.5;
+  -webkit-transition: 0.5;
+  -moz-transition: 0.5;
+}
+
+.rotating-infinite-1s {
+  -webkit-animation: rotating 1s linear infinite;
+  -moz-animation: rotating 1s linear infinite;
+  -ms-animation: rotating 1s linear infinite;
+  -o-animation: rotating 1s linear infinite;
+  animation: rotating 1s linear infinite;
+}
+
+/* Positioning */
 .dead-center {
   position: absolute;
   left: 0;
@@ -102,8 +120,8 @@ ul {
 li {
   list-style: none;
 }
-/*z-indexex*/
 
+/*z-indexex*/
 .z-1 {
   z-index: 1;
 }
@@ -159,26 +177,6 @@ input {
   -webkit-border-radius: 0;
 }
 /*Transitions*/
-
-.linear-3 {
-  transition: 0.3s;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-}
-
-.linear-5 {
-  transition: 0.5;
-  -webkit-transition: 0.5;
-  -moz-transition: 0.5;
-}
-
-.rotating-infinite-1s {
-  -webkit-animation: rotating 1s linear infinite;
-  -moz-animation: rotating 1s linear infinite;
-  -ms-animation: rotating 1s linear infinite;
-  -o-animation: rotating 1s linear infinite;
-  animation: rotating 1s linear infinite;
-}
 
 h1 {
   font-size: 25px;

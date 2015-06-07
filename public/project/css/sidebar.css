@@ -1,14 +1,15 @@
+/* Sidebar Container */
 .sidebar-container {
   position: fixed;
   right: -300px;
   width: 300px;
   height: 100%;
-  z-index: 0;
   background: rgba(32, 35, 40, 1);
   color: white;
   box-shadow: inset 0 0 100px 0 #000;
 }
 
+/* Sidebar Menu Container */
 .sidebar-menu-container {
   position: relative;
   left: 25px;
@@ -18,12 +19,15 @@
   margin: auto;
   text-align: left;
   font-size: 20px;
+  cursor: pointer;
 }
 
+/* Sidebar List Elements */
 .sidebar-menu-container > li {
   padding-bottom: 40px;
 }
 
+/* Sidebar List Element Icons */
 li.icon-home-2 {
   font-size: 20px;
 }
@@ -32,6 +36,7 @@ li.ion-model-s {
   font-size: 20px;
 }
 
+/* Sidebar List Element Copy */
 span.sidebar-menu-copy {
   font-family: 'Open Sans', sans-serif !important;
   font-size: 18px;

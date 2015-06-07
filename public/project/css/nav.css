@@ -1,5 +1,4 @@
 /* Nav Container */
-
 .nav-container {
   position: fixed;
   height: 70px;
@@ -7,8 +6,8 @@
   top: 0;
   left: 0;
 }
-/* Nav Logo Top Left */
 
+/* Nav Logo Top Left */
 .nav-container > img {
   position: absolute;
   top: 0;
@@ -20,8 +19,8 @@
   -o-transition: .5s ease-in-out;
   transition: .5s ease-in-out;
 }
-/* Hamburger */
 
+/* Hamburger */
 .ion-navicon {
   color: white;
   font-size: 40px;
@@ -30,8 +29,8 @@
   transform: scale(1.3, 1);
   cursor: pointer;
 }
-/* Nav Gradient */
 
+/* Nav Gradient */
 .nav-gradient {
   position: fixed;
   width: 100%;

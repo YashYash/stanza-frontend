@@ -27,7 +27,7 @@
   <div class="description">
     <div ng-repeat="post in getData('WallController').posts | filter:searchPosts | orderBy: '-created'" class="post">
     	<span class="post-date">{{post.created}}</span>
-      <p class="get-started-headings">{{post.title}}</p>
+      <p class="get-started-headings overflow-heading">{{post.title}}</p>
       <div class="sub-line"></div>
       <p class="get-started-paragraph">
         {{post.description}}

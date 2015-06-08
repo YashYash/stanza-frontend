@@ -15,7 +15,7 @@ app.controller('NavController', [
 
     console.log('#### Nav Controller');
 
-    $rootScope.$on('landingBody:toggleSidebar', toggleSidebar);
+    $rootScope.$on('toggleSidebar', toggleSidebar);
 
     $scope.navigate = function(route) {
       if (route === 'home') {

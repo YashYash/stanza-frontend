@@ -18,7 +18,7 @@ app.directive('ngHover', function($rootScope, StateService) {
         } else if (StateService.data['sidebar'].isToggled && StateService.data['sidebar'].isFullyOpen) {
           obj.container = 'sidebar';
           obj.key = 'isToggled';
-          $rootScope.$broadcast('landingBody:toggleSidebar', obj);
+          $rootScope.$broadcast('toggleSidebar', obj);
           $rootScope.$apply();
         }
       });

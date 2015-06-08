@@ -182,7 +182,6 @@ router.get('/all/cars', function(req, res) {
   var f = ff(function() {
     Ad.find().exec(f.slot());
   }, function(ads) {
-    console.log(ads);
     res.send(ads);
   })
 });

@@ -2,11 +2,13 @@ app.controller('NavController', [
   '$scope',
   '$rootScope',
   '$state',
+  '$timeout',
   'StateService',
   function(
     $scope,
     $rootScope,
     $state,
+    $timeout,
     StateService) {
 
     'use strict';

@@ -14,7 +14,7 @@ app.directive('ngHover', function($rootScope, StateService) {
           scope.hoverCars = isCarsRow;
           scope.$apply();
 
-          /* only broadcast if the sidebar is toggled */
+          /* only broadcast if the sidebar is both toggled and fully open */
         } else if (StateService.data['sidebar'].isToggled && StateService.data['sidebar'].isFullyOpen) {
           obj.container = 'sidebar';
           obj.key = 'isToggled';

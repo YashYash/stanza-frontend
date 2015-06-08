@@ -9,6 +9,7 @@ var Ad = require('../models/ads');
 var ff = require('ff');
 
 router.get('/cars/:pages', function(req, res) {
+  var sendCars = [];
   async.waterfall([
     function(callback) {
       Ad.remove(function(err) {
@@ -154,6 +155,7 @@ router.get('/cars/:pages', function(req, res) {
               var newAd = new Ad(ad);
               newAd.save(function(err) {
               	if(!err) {
+                  sendCars.push(ad);
               		next();
               	} else {
               		callback(err);
@@ -168,7 +170,7 @@ router.get('/cars/:pages', function(req, res) {
         });
       }, function() {
       	socket.emit('progress', 100);
-        res.sendStatus(200);
+        res.send(sendCars);
       });
     }
   ], function(err) {
@@ -176,4 +178,12 @@ router.get('/cars/:pages', function(req, res) {
   });
 });
 
+router.get('/all/cars', function(req, res) {
+  var f = ff(function() {
+    Ad.find().exec(f.slot());
+  }, function(ads) {
+    console.log(ads);
+    res.send(ads);
+  })
+});
 module.exports = router;

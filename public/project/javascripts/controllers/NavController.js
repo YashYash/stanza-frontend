@@ -18,17 +18,13 @@ app.controller('NavController', [
     $scope.navigate = function(route) {
       if (route === 'home') {
         $state.go('app.v1.landing');
-      }
-      else if (route === 'music') {
+      } else if (route === 'music') {
         $state.go('app.v1.music-desktop');
-      }
-      else if (route === 'booking') {
+      } else if (route === 'booking') {
         $state.go('app.v1.booking-desktop');
-      }
-      else if (route === 'cars') {
+      } else if (route === 'cars') {
         console.log('navigate to cars');
-      }
-      else {
+      } else {
         console.error('route not found');
       }
     };
@@ -40,11 +36,18 @@ app.controller('NavController', [
     function toggleSidebar(event, obj) {
       StateService.data[obj.container][obj.key] = !(StateService.data[obj.container][obj.key])
       obj.key = 'isFullyOpen';
-      onToggleSideBar(obj);
+      onSidebarToggled(obj);
     }
 
-    function onToggleSideBar(obj) {
-      StateService.data[obj.container][obj.key] = !(StateService.data[obj.container][obj.key])
+    function onSidebarToggled(obj) {
+      var isFullyOpen = (StateService.data[obj.container][obj.key])
+      if (isFullyOpen) {
+        StateService.data[obj.container][obj.key] = false;
+      } else {
+        $timeout(function() {
+          StateService.data[obj.container][obj.key] = true;
+        }, 500);
+      }
     }
   }
 ]);

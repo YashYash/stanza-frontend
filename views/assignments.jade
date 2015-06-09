@@ -39,6 +39,7 @@ html(lang='en' ng-app="app")
     script(src="/assignments/javascripts/controllers/LandingController.js")
     script(src="/assignments/javascripts/controllers/AssignmentsController.js")
     script(src="/assignments/javascripts/controllers/GetStartedController.js")
+    script(src="/assignments/javascripts/controllers/WallController.js")
 
 
     //- Directives
@@ -49,13 +50,18 @@ html(lang='en' ng-app="app")
 
     //- Services
     script(src="/assignments/javascripts/services/StateService.js")
+    script(src="/assignments/javascripts/services/WallService.js")
+
     //- Css
     link(rel="stylesheet" href="/assignments/css/global.css")
     link(rel="stylesheet" href="/assignments/css/nav.css")
     link(rel="stylesheet" href="/assignments/css/content.css")
     link(rel="stylesheet" href="/assignments/css/landing.css")
+    link(rel="stylesheet" href="/assignments/css/banner.css")
     link(rel="stylesheet" href="/assignments/css/assignments.css")
     link(rel="stylesheet" href="/assignments/css/get-started.css")
+    link(rel="stylesheet" href="/assignments/css/wall.css")
+
     //- Fonts
     link(href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/assignments/css')
     link(href="//fontastic.s3.amazonaws.com/ajkCKZcprWV8fCCd7UykoN/icons.css" rel="stylesheet")      
@@ -64,7 +70,7 @@ html(lang='en' ng-app="app")
     link(href="//fontastic.s3.amazonaws.com/ajkCKZcprWV8fCCd7UykoN/icons.css" rel="stylesheet")
     
     //- Title
-    title {{tabTitle}}
+    title Stanza Assignments
 
   //- Body
   body(ui-view="global")    

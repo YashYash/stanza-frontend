@@ -65,6 +65,15 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
         }
       }
     })
+    .state('app.v1.wall', {
+      url: '/wall',
+      views: {
+        'content@app.v1': {
+          templateUrl: '/assignments/views/v1/wall.html',
+          controller: 'WallController'
+        }
+      }
+    })    
 }]);
 
 app.constant('moment', moment);

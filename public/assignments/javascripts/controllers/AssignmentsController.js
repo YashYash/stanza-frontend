@@ -17,8 +17,6 @@ app.controller('AssignmentsController', [
 	// Init
 	$rootScope.tabTitle = 'Stanza Assignments';
 	
-
-	console.log(StateService.data['AssignmentsController']);
 	// UI-responders
 	$scope.getData = function(state) {
 		return StateService.data[state];

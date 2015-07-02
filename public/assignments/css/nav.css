@@ -1,4 +1,7 @@
-/* Nav Container */
+
+#desktop-nav {
+  background: transparent;
+}
 
 .nav-container {
   height: 70px;
@@ -31,7 +34,6 @@
   cursor: pointer;
   color: white;
 }
-/* Side Bar */
 
 .side-bar {
   z-index: 0;

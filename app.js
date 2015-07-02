@@ -26,7 +26,7 @@ socket = io.sockets.on('connection', function(socket) {
 });
 
 // Required schemas
-var mongoose = require('mongoose');
+// var mongoose = require('mongoose');
 var Account = require('./models/account');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
@@ -40,7 +40,7 @@ var scrapeCars = require('./api/scrape-cars');
 
 var router = express.Router();
 
-mongoose.set('debug', true);
+// mongoose.set('debug', true);
 // app.use(logfmt.requestLogger());
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -56,8 +56,8 @@ app.use(session({
     maxAge: 6000000
   }
 }));
-app.use(passport.initialize());
-app.use(passport. session());
+// app.use(passport.initialize());
+// app.use(passport. session());
 app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -93,14 +93,14 @@ if (!process.env.NODE_ENV) {
   console.log('Server listening to port ' + 3000);
   console.log('Using dev database - "stanza-frontend"')
   appserver.listen(process.env.PORT || 3000);
-  mongoose.connect('mongodb://localhost:27017/stanza-frontend');
-  app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-      message: err.message,
-      error: err
-    });
-  });
+  // mongoose.connect('mongodb://localhost:27017/stanza-frontend');
+  // app.use(function(err, req, res, next) {
+  //   res.status(err.status || 500);
+  //   res.render('error', {
+  //     message: err.message,
+  //     error: err
+  //   });
+  // });
 }
 
 if (process.env.NODE_ENV === 'production') {
@@ -110,14 +110,14 @@ if (process.env.NODE_ENV === 'production') {
   var port = process.env.PORT || 3000;
   appserver.listen(port);
   console.log('Server listening to port ' + port);
-  mongoose.connect('mongodb://pinpoint-founder:kobefederer1qaz@ds049170.mongolab.com:49170/pinpoint');
-  app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-      message: err.message,
-      error: err
-    });
-  });
+  // mongoose.connect('mongodb://pinpoint-founder:kobefederer1qaz@ds049170.mongolab.com:49170/pinpoint');
+  // app.use(function(err, req, res, next) {
+  //   res.status(err.status || 500);
+  //   res.render('error', {
+  //     message: err.message,
+  //     error: err
+  //   });
+  // });
 }
 
 // passport config

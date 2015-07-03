@@ -1,5 +1,5 @@
-<div class="nav-wrapper nav-container" ng-class="{slideNav: (sideNav === 'show')}" style>
+<div class="nav-container" ng-class="{'slide-left': (getData('NavController').slideContent)}" style>
+	<div class="overlay-gradient-bt"></div>
 	<img src="images/stanza_logo.png" alt="">
-	<span class="ion-navicon hamburger" ng-click="ToggleNav(sideNav)" slide="left">
-	</span>
+	<span class="ion-navicon hamburger" ng-click="toggleNav()"></span>
 </div>

@@ -13,6 +13,7 @@ app.controller('CarController', [
 
 	// use that service Mofo
 	$scope.cars = CarService.cars
+	console.log($scope.cars)
 
 	$scope.newcars = [
 		{

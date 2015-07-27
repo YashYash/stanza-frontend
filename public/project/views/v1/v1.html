@@ -1,11 +1,11 @@
-<div class="wrapper" ng-class="{ 'sidebar-open' : showSidebar }">
-
+<div class="wrapper" ng-class="{ 'sidebar-open' : showSidebar, 'car-background' : viewCars }">
+    <!-- not sure why viewCars remains out of scope here -->
     <div class="sidebar" ui-view="sidebar"></div>
 
     <div class="middle">
         <div class="header clearfix" ui-view="nav"></div>
         <div class="content " ui-view="content"></div>
-        <div class="cars" ui-view="cars"></div>
+        <div class="cars-view" ui-view="cars"></div>
     <div>
 
 </div>

@@ -1,9 +1,115 @@
+/* Override some of the ionic defaults, need more time to understand and distrust absolute position and height 100% */
+
+body {
+    position: relative;
+    overflow: visible;
+    height: auto;
+    background: #262628;
+}
+
+.wrapper {
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    top: 0;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    z-index: 0;
+    background-image: url(https://dff2h0hbfv6w4.cloudfront.net/images/stanza/front-end-assignments/lotus-mountains.jpg);
+}
+.wrapper.nav-expanded .content {
+    transition: transform 0.5s;
+    -webkit-transform: translate3d(300px, 0, 0);
+    transform: translate3d(300px, 0, 0);
+}
+
+.middle {
+    position: relative;
+    left: 0;
+    z-index: 99;
+    height: 100%;
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+}
+
+.content {
+     position: relative;
+     width: auto;
+     height: auto;
+}
+
+.background-img {
+    background-color: #000;
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 0;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    z-index: 0;
+}
+.background-cars {
+    background-image: url(https://dff2h0hbfv6w4.cloudfront.net/images/stanza/front-end-assignments/lotus-mountains.jpg);
+}
+.background-landing {
+    background-image: url(http://www.wall321.com/thumbnails/detail/20120308/cityscapes%20city%20cars%20aston%20martin%20james%20bond%20bridges%20silver%20cars%20dbs%201920x1200%20wallpaper_www.wall321.com_15.jpg);
+}
+
+.divider {
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 2px;
+    background: rgba(255,255,255,0.3);
+    margin-bottom: 20px;
+    width: 20%;
+    display: block;
+}
+.divider.blue {
+  background: #30D1EA;
+}
+.button {
+    border: 1px solid #30D1EA;
+    color: #FFF;
+    text-align: center;
+    background: none;
+    min-height: 10px;
+}
+.button:hover {
+    background: #30D1EA;
+    color: #333;
+}
+.button-small {
+    padding: 5px 60px 5px 60px;
+    border-radius: 20px;
+    font-size: 12px;
+    line-height: 16px;
+    width: 200px;
+}
+.button-medium {
+    padding: 5px 60px 5px 60px;
+    border-radius: 20px;
+    font-size: 12px;
+    line-height: 16px;
+    width: 200px;
+}
+
+
+
+
+
+
+
 body, input, button, textarea, h1, h2, h3, p {
 	font-family: 'Open Sans', sans-serif !important;
 }
 a {
   text-decoration: none;
-  color: #75cfea;
+  color: #30D1EA;
 }
 ul {
   padding: 0;

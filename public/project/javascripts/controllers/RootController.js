@@ -1,12 +1,13 @@
 app.controller('RootController', [
 	'$scope',
 	'$rootScope',
-	'$state', 
+	'$state',
 	function(
 		$rootScope,
-		$scope, 
+		$scope,
 		$state) {
 	'use strict';
 	console.log('#### Root Controller');
+
 
 }]);

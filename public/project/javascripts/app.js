@@ -2,7 +2,7 @@ var app = angular.module('app', ['ionic', 'ngStorage', 'ngSanitize', 'ngLoad']);
 'use strict';
 
 console.log('#### APP JS LOADED: app');
-app.run(['$rootScope','$http','CarService', function($rootScope, $http, CarService) {
+app.run(['$rootScope','$http','CarService','ClassService', function($rootScope, $http, CarService, ClassService) {
 
 }]);
 

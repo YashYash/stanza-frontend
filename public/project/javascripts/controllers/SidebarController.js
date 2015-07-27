@@ -15,6 +15,7 @@ app.controller('SidebarController', [
     };
 
     $scope.goToDesktopRoute = function(route) {
+        console.log(route)
         if(route === 'home') {
             $state.go('app.v1.landing');
         }

@@ -29,13 +29,12 @@ app.service('CarService', ['$rootScope','$http',
 
         (function getCars() {
             console.log('getCars');
-            $http.get('/api/scrape/cars/1').
+            $http.get('').
               success(function(data, status, headers, config) {
                   console.log("getCars success");
-                  // console.log(carDummyData.length);
+                  var data = carDummyData;
                   for (var i = 0; i < data.length; i++) {
                     cars.push(data[i]);
-                    // console.log(carDummyData[i])
                   }
                 }).
                 error(function(data, status, headers, config) {

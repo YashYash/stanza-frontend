@@ -15,11 +15,16 @@ app.controller('CarController', [
 	$scope.cars = CarService.cars
 	console.log($scope.cars)
 
-	$scope.newcars = [
-		{
-			title: "nissan GTX",
-			year: "2015"
-		}
-	]
+	$scope.goToSellCars = function() {
+		$state.go('app.v1.sell');
+	};
+
+    $scope.update = function(car) {
+    	console.log(car)
+    	$scope.cars.push(car)
+    	console.log($scope.cars)
+	};
+
+
 
 }]);

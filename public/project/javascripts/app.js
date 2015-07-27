@@ -61,7 +61,18 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider, $urlR
         controller: 'CarController'
       }
     }
+  })
+
+  .state('app.v1.sell', {
+    url: '/cars/sell',
+    views: {
+      'sell-cars@app.v1': {
+        templateUrl: '/project/views/v1/sell-car-form.html',
+        controller: 'CarController'
+      }
+    }
   });
+
 }]);
 
 app.constant('moment', moment);

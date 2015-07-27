@@ -70,12 +70,12 @@ input {
 .linear-3 {
   transition:0.3s;
   -webkit-transition:0.3s;
-  -moz-transition:0.3s;  
+  -moz-transition:0.3s;
 }
 .linear-5 {
   transition:0.5;
   -webkit-transition:0.5;
-  -moz-transition:0.5;    
+  -moz-transition:0.5;
 }
 @keyframes rotating {
   from {
@@ -153,16 +153,16 @@ button {
   display: none;
   -webkit-transition:0.5s;
   -moz-transition:0.5s;
-  transition:0.5s;  
+  transition:0.5s;
 }
 
 .show-global-overlay {
   display: block !important;
   -webkit-transition:0.5s;
   -moz-transition:0.5s;
-  transition:0.5s;  
+  transition:0.5s;
 }
-@media screen and (-webkit-min-device-pixel-ratio:0) { 
+@media screen and (-webkit-min-device-pixel-ratio:0) {
   select:focus,
   textarea:focus,
   input:focus {
@@ -170,3 +170,17 @@ button {
   }
 }
 /*Desktop*/
+
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */

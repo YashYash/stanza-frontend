@@ -15,6 +15,7 @@ var MetricMapper = require('./metrics/mapper.js')
 var TraceAggregator = require('./transaction/trace/aggregator.js')
 var hashes = require('./util/hashes')
 var uninstrumented = require('./uninstrumented.js')
+var QueryTracer = require('./db/tracer')
 
 /*
  *
@@ -75,6 +76,9 @@ function Agent(config) {
 
   // error tracing
   this.errors = new ErrorTracer(this.config)
+
+  // query tracing
+  this.queries = new QueryTracer(this.config)
 
   // metrics
   this.mapper = new MetricMapper()
@@ -234,31 +238,30 @@ Agent.prototype.harvest = function harvest(callback) {
   if (!callback) throw new TypeError("callback required!")
 
   var agent = this
+  var harvestSteps = [
+    '_sendMetrics',
+    '_sendErrors',
+    '_sendTrace',
+    '_sendEvents',
+    '_sendCustomEvents',
+    '_sendQueries'
+  ]
 
-  if (this.collector.isConnected()) {
-    /*eslint-disable max-nested-callbacks*/
-    agent._sendMetrics(function cb__sendMetrics(error) {
-      if (error) return callback(error)
-
-      agent._sendErrors(function cb__sendErrors(error) {
-        if (error) return callback(error)
-
-        agent._sendTrace(function cb__sendTrace(error) {
-          if (error) return callback(error)
-
-          agent._sendEvents(function cb__sendEvents(error) {
-            if (error) return callback(error)
-
-            agent._sendCustomEvents(callback)
-          })
-        })
-      })
-    })
-    /*eslint-enable max-nested-callbacks*/
-  } else {
-    process.nextTick(function cb_nextTick() {
+  if (!this.collector.isConnected()) {
+    return process.nextTick(function cb_nextTick() {
       callback(new Error("Not connected to New Relic!"))
     })
+  }
+
+  runHarvestStep(0)
+
+  function runHarvestStep(n) {
+    agent[harvestSteps[n++]](next)
+
+    function next(error) {
+      if (error || n >= harvestSteps.length) return callback(error)
+      runHarvestStep(n)
+    }
   }
 }
 
@@ -492,13 +495,13 @@ Agent.prototype._processCustomEvents = function _processCustomEvents() {
 
     // Log any warnings about dropping events
     if (diff) {
-      logger.warn('Dropped %s custom events out of %s.', diff, this.events.seen)
+      logger.warn('Dropped %s custom events out of %s.', diff, this.customEvents.seen)
     }
 
     // Create a new reservoir now (instead of at send time) so metrics match
     // what we actually send.
     this.customEvents = new Reservoir(
-      this.config.custom_insights_events.max_events_stored
+      this.config.custom_insights_events.max_samples_stored
     )
   } else if (this.customEventsPool.length > 0) {
     // We have events and custom events are disabled. Clear everything out so we
@@ -507,7 +510,7 @@ Agent.prototype._processCustomEvents = function _processCustomEvents() {
     // a harvest cycle.
     this.customEventsPool = []
     this.customEvents = new Reservoir(
-      this.config.custom_insights_events.max_events_stored
+      this.config.custom_insights_events.max_samples_stored
     )
   }
 }
@@ -660,8 +663,12 @@ Agent.prototype._sendCustomEvents = function _sendCustomEvents(callback) {
     // send data to collector
     agent.collector.customEvents(payload, function cb_customEvents(err) {
       if (err && err.statusCode === 413 ) {
+        var tooLarge = agent.metrics.getOrCreateMetric(NAMES.CUSTOM_EVENTS.TOO_LARGE)
+        tooLarge.incrementCallCount()
         logger.warn('request too large; custom event data dropped')
       } else if (err) {
+        var failed = agent.metrics.getOrCreateMetric(NAMES.CUSTOM_EVENTS.FAILED)
+        failed.incrementCallCount()
         logger.warn('custom events failed to send; re-sampling')
 
         for (var i = 0; i < agent.customEventsPool.length; i++) {
@@ -674,6 +681,36 @@ Agent.prototype._sendCustomEvents = function _sendCustomEvents(callback) {
   } else {
     process.nextTick(callback)
   }
+}
+
+Agent.prototype._sendQueries = function _sendQueries(callback) {
+  var agent = this
+  var queries = this.queries
+
+  this.queries = new QueryTracer(agent.config)
+
+  if (!this.config.slow_sql.enabled) {
+    logger.debug('Slow Query is not enabled.')
+    return process.nextTick(callback)
+  }
+
+  if (Object.keys(queries.samples).length < 1) {
+    logger.debug('No queries to send.')
+    return process.nextTick(callback)
+  }
+
+  queries.prepareJSON(function gotJSON(err, data) {
+    if (err) {
+      this.queries.merge(queries)
+      logger.debug('Error while serializing query data: %s', err.message)
+      return callback(err)
+    }
+
+    agent.collector.queryData([data], function handleResponse(error) {
+      if (error) agent.queries.merge(queries)
+      callback(error)
+    })
+  })
 }
 
 Agent.prototype._addIntrinsicAttrsFromTransaction = _addIntrinsicAttrsFromTransaction

@@ -8,6 +8,7 @@ app.controller('NavController', [
 		$state) {
 	'use strict';
 	console.log('#### Nav Controller');
+
 	$scope.goToDesktopRoute = function(route) {
 		if(route === 'home') {
 			$state.go('app.v1.landing');
@@ -18,6 +19,12 @@ app.controller('NavController', [
 		if(route === 'booking') {
 			$state.go('app.v1.booking-desktop');
 		}
+		if(route === 'cars') {
+			$state.go('app.v1.cars');
+			console.log('app.v1.cars')
+		}
 		$rootScope.$broadcast('hide sidenav');
-	}
+	};
+
+
 }]);

@@ -1,7 +1,7 @@
 (function(angular){
 
     angular.module('ngLoad', ['ng'])
-    
+
     .directive('ngLoad', ['$parse', function($parse){
 
         return {
@@ -22,5 +22,5 @@
 
     }]);
 
-    
+
 })(angular);

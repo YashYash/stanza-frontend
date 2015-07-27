@@ -14,6 +14,7 @@ router.get('/assignments', function(req, res) {
   res.render('assignments');
 });
 
+
 // Register
 
 module.exports = router;

@@ -182,6 +182,26 @@ exports.config = {
      */
     ignore_status_codes: [404]
   },
+  /**
+   * Options regarding collecting system information. Used for system
+   * utilization based pricing scheme.
+   */
+  utilization: {
+    /**
+     * This flag dictates whether the agent attempts to reach out to AWS
+     * to get info about the vm the process is running on.
+     *
+     * @env NEW_RELIC_UTILIZATION_DETECT_AWS
+     */
+    detect_aws: true,
+    /**
+     * This flag dictates whether the agent attempts to reach out to AWS
+     * to get info about the container the process is running in.
+     *
+     * @env NEW_RELIC_UTILIZATION_DETECT_DOCKER
+     */
+    detect_docker: true
+  },
   transaction_tracer: {
     /**
      * Whether to collect & submit slow transaction traces to New Relic. The
@@ -228,7 +248,25 @@ exports.config = {
      *
      * @env NEW_RELIC_TRACER_TOP_N
      */
-    top_n: 20
+    top_n: 20,
+
+    /**
+     * This option affects both slow-queries and record_sql for transaction
+     * traces.  It can have one of 3 values: 'off', 'obfuscated' or 'raw'
+     * When it is 'off' no slow queries will be captured, and backtraces
+     * and sql will not be included in transaction traces.  If it is 'raw'
+     * or 'obfuscated' and other criteria (slow_sql.enabled etc) are met
+     * for a query. The raw or obfuscated sql will be included in the
+     * transaction trace and a slow query sample will be collected.
+     */
+    record_sql: 'off',
+
+    /**
+     * This option affects both slow-queries and record_sql for transaction
+     * traces.  This is the minimum duration a query must take (in ms) for it
+     * to be considered for for slow query and inclusion in transaction traces.
+     */
+    explain_threshold: 500
   },
   /**
    * Whether to enable internal supportability metrics and diagnostics. You're
@@ -349,8 +387,8 @@ exports.config = {
    */
   transaction_events: {
     /**
-     * If this is disabled, the agent does not collect, nor try to send, data
-     * for Insights.
+     * If this is disabled, the agent does not collect, nor try to send,
+     * analytic data.
      */
     enabled: true,
 
@@ -371,6 +409,54 @@ exports.config = {
      */
     max_samples_stored: 20000
   },
+
+  /**
+   * Custom Insights Events
+   *
+   * Custom insights events are JSON object that are sent to New Relic
+   * Insights. You can tell the agent to send your custom events via the
+   * `newrelic.recordCustomEvent()` API. These events are sampled once the max
+   * reservoir size is reached. You can tune this setting below.
+   *
+   * Read more here: http://newrelic.com/insights
+   */
+  custom_insights_events: {
+    /**
+     * If this is disabled, the agent does not collect, nor try to send, custom
+     * event data.
+     */
+    enabled: true,
+    /**
+     * The agent will collect all events up to this number per minute. If there
+     * are more than that, a statistical sampling will be collected. Current
+     * this uses a reservoir sampling algorithm.
+     *
+     * By increasing this setting you are both increasing the memory
+     * requirements of the agent as well as increasing the payload to the New
+     * Relic servers. The memory concerns are something you should consider for
+     * your own server's sake. The payload of events is compressed, but if it
+     * grows too large the New Relic servers may reject it.
+     */
+    max_samples_stored: 1000
+  },
+  /**
+   * This is used to configure properties about the user's host name.
+   */
+  process_host: {
+     /**
+     * Configurable display name for hosts
+     *
+     * @env NEW_RELIC_PROCESS_HOST_DISPLAY_NAME
+     */
+    display_name: '',
+    /**
+     * ip address preference when creating hostnames
+     *
+     * @env NEW_RELIC_IPV_PREFERENCE
+     */
+    ipv_preference: '4'
+ },
+
 
   /**
    * High Security
@@ -396,5 +482,17 @@ exports.config = {
    * from this agent. Both label names and label values have a maximum length of
    * 255 characters. This object should contain at most 64 labels.
    */
-  labels: {}
+  labels: {},
+
+  /**
+   * These options control behavior for slow queries, but do not affect sql
+   * nodes in transaction traces.
+   * slow_sql.enabled enables and disables slow_sql recording
+   * slow_sql.max_samples sets the maximum number of slow query samples that
+   * will be collected in a single harvest cycle.
+   */
+   slow_sql: {
+    enabled: false,
+    max_samples: 10
+  }
 }

@@ -1,0 +1,72 @@
+.background-img {
+    background-color: #000;
+    background-size: cover;
+    background-repeat: no-repeat;
+    top: 0;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    z-index: 0;
+}
+.background-cars {
+    background-image: url(https://dff2h0hbfv6w4.cloudfront.net/images/stanza/front-end-assignments/lotus-mountains.jpg);
+}
+.background-landing {
+    background-image: url(http://www.wall321.com/thumbnails/detail/20120308/cityscapes%20city%20cars%20aston%20martin%20james%20bond%20bridges%20silver%20cars%20dbs%201920x1200%20wallpaper_www.wall321.com_15.jpg);
+}
+.callout {
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 300px;
+    text-align: center;
+    z-index: 1;
+    position: relative;
+}
+h1 {
+    color: #FFF;
+    font-size: 64px;
+    font-weight: 300;
+}
+h2 {
+    color: #30D1EA;
+    font-size: 20px;
+    font-weight: 600;
+}
+.divider {
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 2px;
+    background: rgba(255,255,255,0.3);
+    margin-bottom: 20px;
+    width: 20%;
+    display: block;
+
+}
+.button {
+    border: 1px solid #30D1EA;
+    color: #FFF;
+    text-align: center;
+    background: none;
+    min-height: 10px;
+}
+.button:hover {
+    background: #30D1EA;
+    color: #333;
+}
+.button-small {
+    padding: 5px 60px 5px 60px;
+    border-radius: 20px;
+    font-size: 12px;
+    line-height: 16px;
+    width: 200px;
+}
+.button-medium {
+    padding: 5px 60px 5px 60px;
+    border-radius: 20px;
+    font-size: 12px;
+    line-height: 16px;
+    width: 200px;
+}
+

@@ -1,0 +1,23 @@
+<div class="background-img background-cars">
+
+    <div class="callout">
+
+        <h1>Stanza-Cars</h1>
+        <div class="divider"></div>
+        <h2>Find the ride of your dreams</h2>
+
+        <a class="button button-small" ng-click="getCars()">Sell Your Car</a>
+
+        <div class="cars-grid">
+            <div class="car" ng-repeat="car in cars">
+                {{car.title}}
+                {{car.price}}
+                {{car.address}}
+                {{car.images[0]}}
+            </div>
+        </div>
+
+    </div>
+
+</div>
+

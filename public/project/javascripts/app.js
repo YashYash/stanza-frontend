@@ -2,8 +2,8 @@ var app = angular.module('app', ['ionic', 'ngStorage', 'ngSanitize', 'ngLoad']);
 'use strict';
 
 console.log('#### APP JS LOADED: app');
-app.run(['$rootScope', function($rootScope) {
-	console.log('#### App.js .run');
+app.run(['$rootScope','$http','CarService', function($rootScope, $http, CarService) {
+
 }]);
 
 app.config(['$stateProvider','$urlRouterProvider',function($stateProvider, $urlRouterProvider) {
@@ -21,32 +21,47 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider, $urlR
 		}
 	})
 	.state('app.v1', {
-	  url: 'tab',
-	  abstract: true,
-	  views: {
-	    'global@': {
-	      templateUrl: '/project/views/v1/v1.html',
-	      controller: 'RootController'
-	    },
-	    'nav@app.v1': {
-	      templateUrl: '/project/views/v1/nav.html',
-	      controller: 'NavController'
-	    },
-	    'content@app.v1': {
-	      templateUrl: '/project/views/v1/content.html',
-	      controller: 'ContentController'
-	    }     
-	  }
-    })
-    .state('app.v1.landing', {
-      url: '/landing',
-      views: {
+    url: 'tab',
+        abstract: true,
+        views: {
+        'global@': {
+          templateUrl: '/project/views/v1/v1.html',
+          controller: 'RootController'
+        },
+        'nav@app.v1': {
+          templateUrl: '/project/views/v1/nav.html',
+          controller: 'NavController'
+        },
+        'sidebar@app.v1': {
+            templateUrl: '/project/views/v1/sidebar.html',
+            controller: 'SidebarController'
+        },
         'content@app.v1': {
-          templateUrl: '/project/views/v1/landing.html',
-          controller: 'LandingController'
+          templateUrl: '/project/views/v1/content.html',
+          controller: 'ContentController'
         }
+    }
+  })
+
+  .state('app.v1.landing', {
+    url: '/landing',
+    views: {
+      'content@app.v1': {
+        templateUrl: '/project/views/v1/landing.html',
+        controller: 'LandingController'
       }
-    })                
+    }
+  })
+
+  .state('app.v1.cars', {
+    url: '/cars',
+    views: {
+      'cars@app.v1': {
+        templateUrl: '/project/views/v1/cars.html',
+        controller: 'CarController'
+      }
+    }
+  });
 }]);
 
 app.constant('moment', moment);

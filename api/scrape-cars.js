@@ -8,7 +8,10 @@ var request = require('request');
 var Ad = require('../models/ads');
 var ff = require('ff');
 
+console.log("scrape-cars.js")
+
 router.get('/cars/:pages', function(req, res) {
+  console.log("API Scrape Route")
   var sendCars = [];
   async.waterfall([
     function(callback) {
@@ -48,6 +51,8 @@ router.get('/cars/:pages', function(req, res) {
           var ads = $('.container-results').children('table');
           ads.each(function(i, elem) {
             levelOneAds.push($(this));
+            console.log(levelOneAds);
+
           });
           cb();
         }).onError(function(err) {

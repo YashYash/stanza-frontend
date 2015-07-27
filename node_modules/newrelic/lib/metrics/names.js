@@ -107,14 +107,24 @@ var HAPI = {
 var SUPPORTABILITY = {
   PREFIX: 'Supportability/',
   UNINSTRUMENTED: 'Supportability/Uninstrumented',
-  EVENTS: 'Supportability/Events'
+  EVENTS: 'Supportability/Events',
+  API: 'Supportability/API',
+  UTILIZATION: 'Supportability/utilization'
 }
+
+var UTILIZATION = {
+  AWS_ERROR: SUPPORTABILITY.UTILIZATION + '/aws/error',
+  DOCKER_ERROR: SUPPORTABILITY.UTILIZATION + '/docker/error'
+}
+
 
 var CUSTOM_EVENTS = {
   PREFIX: SUPPORTABILITY.EVENTS + '/Customer/',
   DROPPED: SUPPORTABILITY.EVENTS + '/Customer/Dropped',
   SEEN: SUPPORTABILITY.EVENTS + '/Customer/Seen',
-  SENT: SUPPORTABILITY.EVENTS + '/Customer/Sent'
+  SENT: SUPPORTABILITY.EVENTS + '/Customer/Sent',
+  TOO_LARGE: SUPPORTABILITY.EVENTS + '/Customer/TooLarge',
+  FAILED: SUPPORTABILITY.EVENTS + '/Customer/FailedToSend'
 }
 
 module.exports = {
@@ -146,6 +156,7 @@ module.exports = {
   RESTIFY: RESTIFY,
   SUPPORTABILITY: SUPPORTABILITY,
   URI: 'Uri',
+  UTILIZATION: UTILIZATION,
   VIEW: VIEW,
   WEB: 'WebTransaction'
 }

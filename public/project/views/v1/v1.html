@@ -1,5 +1,11 @@
+<div class="wrapper" ng-class="{ 'sidebar-open' : showSidebar }">
 
-<div ui-view="nav" id="desktop-nav"></div>
+    <div class="sidebar" ui-view="sidebar"></div>
 
-<div ui-view="content" id="content-container-desktop" ng-class="{'move-container' : (showSideNav === 'true')}"></div>
+    <div class="middle">
+        <div class="header clearfix" ui-view="nav"></div>
+        <div class="content " ui-view="content"></div>
+        <div class="cars" ui-view="cars"></div>
+    <div>
 
+</div>
